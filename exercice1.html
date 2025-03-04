@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameCrafters - Home</title>
+    <link href="./public/style.css" rel="stylesheet">
+    <script type="module">
+        import { library, dom } from "@fortawesome/fontawesome-svg-core";
+        import { faHome, faDumbbell, faLightbulb, faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
+        library.add(faHome, faDumbbell, faLightbulb, faUser, faShoppingCart);
+        dom.watch();
+    </script>
+</head>
+<body class="bg-background text-white font-sans flex flex-col min-h-screen">
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <nav class="w-64 h-screen bg-secondary p-5 fixed left-0 top-0">
+            <h2 class="text-center text-xl font-bold mb-5">GameCrafters</h2>
+            <ul class="space-y-2">
+                <li class="p-4 text-lg flex items-center cursor-pointer bg-primary rounded">
+                    <i class="fas fa-home mr-2"></i> Home
+                </li>
+                <li class="p-4 text-lg flex items-center cursor-pointer transition duration-300 hover:bg-primary rounded">
+                    <i class="fas fa-dumbbell mr-2"></i> Exercices
+                </li>
+                <li class="p-4 text-lg flex items-center cursor-pointer transition duration-300 hover:bg-primary rounded">
+                    <i class="fas fa-lightbulb mr-2"></i> Advices
+                </li>
+                <li class="p-4 text-lg flex items-center cursor-pointer transition duration-300 hover:bg-primary rounded">
+                    <i class="fas fa-user mr-2"></i> Profil
+                </li>
+                <li class="p-4 text-lg flex items-center cursor-pointer transition duration-300 hover:bg-primary rounded">
+                    <i class="fas fa-shopping-cart mr-2"></i> Shop
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenu principal -->
+        <div class="ml-72 flex flex-col items-center justify-center w-full min-h-screen p-6">
+            <h1 class="text-3xl font-bold">Bienvenue sur GameCrafters</h1>
+            <p class="text-lg text-gray-300 mt-2">Améliorez votre concentration et gérez votre stress avec nos exercices interactifs.</p>
+            
+            <!-- Liste déroulante des exercices -->
+            <label for="exercise-select" class="mt-5 text-lg">Choisissez un exercice :</label>
+            <select id="exercise-select" class="mt-2 p-3 rounded-md bg-gray-700 text-white">
+                <option value="">-- Sélectionnez un exercice --</option>
+                <option value="yoga">Yoga</option>
+                <option value="meditation">Méditation</option>
+                <option value="respiration">Exercices de respiration</option>
+                <option value="cardio">Cardio</option>
+                <option value="musculation">Musculation</option>
+            </select>
+
+            <!-- Liste déroulante du temps -->
+            <label for="time-select" class="mt-5 text-lg">Choisissez la durée :</label>
+            <select id="time-select" class="mt-2 p-3 rounded-md bg-gray-700 text-white">
+                <option value="">-- Sélectionnez une durée --</option>
+                <option value="300">5 min</option>
+                <option value="600">10 min</option>
+                <option value="900">15 min</option>
+            </select>
+
+            <!-- Bouton Start -->
+            <button id="start-btn" class="mt-5 px-6 py-3 text-lg bg-gradient-to-r from-primary to-accent rounded-lg hover:from-accent hover:to-primary transition">
+                Start Exercise
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full bg-secondary text-center py-3 fixed bottom-0">
+        <p>© 2025 GameCrafters. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("start-btn").addEventListener("click", function() {
+            let selectedExercise = document.getElementById("exercise-select").value;
+            let selectedTime = document.getElementById("time-select").value;
+            
+            if (selectedExercise && selectedTime) {
+                localStorage.setItem("selectedExercise", selectedExercise);
+                localStorage.setItem("selectedTime", selectedTime);
+                window.location.href = "exercice2.html";
+            } else {
+                alert("Veuillez sélectionner un exercice et une durée avant de commencer.");
+            }
+        });
+    </script>
+
+</body>
+</html>
