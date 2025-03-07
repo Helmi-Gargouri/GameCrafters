@@ -25,7 +25,6 @@ module.exports = {
       colors: {
         primary: "#301529", 
         secondary: "#4E2143", 
-        accent: "#9C3FE4", // Couleur degradd
         accent2: "#F8049C", //2
         gray: {
           400: "#9CA3AF", // les icônes
