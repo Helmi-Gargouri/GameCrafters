@@ -169,6 +169,14 @@
                 alert("Veuillez sélectionner un exercice et une durée avant de commencer.");
             }
         });
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+            } else {
+                menu.classList.add('-translate-x-full');
+            }
+        }
 
        
     </script>
