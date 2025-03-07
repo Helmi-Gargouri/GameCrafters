@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - GameCrafters</title>
+    <title>VideoAdvice - GameCrafters</title>
+    <link href="./public/style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="dist/output.css">
+
 </head>
-<body class="bg-[#301529] text-white h-screen overflow-hidden">
-    <header class="bg-[#4E2143] p-4">
+<body class="bg-primary text-white">
+    <header class="bg-secondary p-4">
         <div class="container mx-auto flex justify-center">
             <div class="relative w-1/2">
                 <!-- Icône de recherche -->
@@ -23,9 +24,9 @@
             </div>
         </div>
     </header>
-    <div class="flex min-h-screen">
-        <!-- Sidebar gauche -->
-        <aside class="hidden md:flex flex-col w-64 bg-[#4E2143] p-5 min-h-screen">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="hidden md:flex flex-col w-64 bg-secondary p-5 min-h-screen">
             <h2 class="text-xl font-bold">GameCrafters</h2>
             <nav class="mt-5">
                 <ul>
@@ -97,12 +98,8 @@
                 <a href="home.html" class="bg-gray-600 text-white px-8 py-2 rounded-lg text-center">Back</a>
                 <button class="bg-pink-500 text-white px-8 py-2 rounded-lg">Next</button>
             </div>
-            <br>
-            <br>
-            <br>
         </main>
         
-        <!-- Sidebar droite (Profil utilisateur) - Visible en desktop -->
         <aside class="hidden md:flex flex-col w-64 bg-[#4E2143] p-5 min-h-screen items-center">
             <!-- Conteneur pour les icônes de notification et paramètres -->
             <div class="flex justify-between w-full">
@@ -148,15 +145,48 @@
         </div>
     </div>
     
-    <!-- Hamburger Button -->
     <button onclick="toggleMenu()" class="md:hidden fixed top-5 right-5 bg-[#4E2143] p-3 rounded-lg text-white text-xl">☰</button>
-    
     <!-- Footer -->
-    <footer class="bg-[#4E2143] text-center p-5 w-full absolute bottom-0">
-        <p>&copy; 2025 GameCrafters</p>
-    </footer>
-    
-    <!-- JavaScript for Mobile Menu -->
+    <div class="bg-secondary text-white py-6  ">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="./imghelmi/logoGC.png"  alt="LOGO" class="w-100 h-16 object-cover">
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-medium mb-3">Quick link</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Exercices</a></li>
+                        <li><a href="#" class="hover:text-white">Advices</a></li>
+                        <li><a href="#" class="hover:text-white">Profil</a></li>
+                        <li><a href="#" class="hover:text-white">Shop</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Contacts us</h2>
+                    <ul class="space-y-2 space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>gamecrafters@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>+216 54 225 641</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Esprit, Lagazelle,<br>Tunis, Tunisie</span>
+                        </li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </div>                       
     <script>
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
